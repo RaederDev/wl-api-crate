@@ -1,8 +1,8 @@
 pub mod date_format {
     use chrono::{DateTime, FixedOffset};
-    use serde::{self, Deserialize, Deserializer, Serializer};
+    use serde::{self, Deserialize, Deserializer};
 
-    const FORMAT: &'static str = "%Y-%m-%dT%H:%M:%S%.f%z";
+    const FORMAT: &str = "%Y-%m-%dT%H:%M:%S%.f%z";
 
     pub fn deserialize<'de, D>(deserializer: D) -> Result<DateTime<FixedOffset>, D::Error>
     where
@@ -17,7 +17,7 @@ pub mod optional_date_format {
     use chrono::{DateTime, FixedOffset};
     use serde::{self, Deserialize, Deserializer};
 
-    const FORMAT: &'static str = "%Y-%m-%dT%H:%M:%S%.f%z";
+    const FORMAT: &str = "%Y-%m-%dT%H:%M:%S%.f%z";
 
     pub fn deserialize<'de, D>(deserializer: D) -> Result<Option<DateTime<FixedOffset>>, D::Error>
     where
@@ -26,7 +26,7 @@ pub mod optional_date_format {
         let opt_str: Option<String> = Option::deserialize(deserializer)?;
         match opt_str {
             Some(s) => DateTime::parse_from_str(&s, FORMAT)
-                .map(|dt| Some(dt))
+                .map(Some)
                 .map_err(serde::de::Error::custom),
             None => Ok(None),
         }
