@@ -1,4 +1,4 @@
-use wiener_linien_ogd::helpers::join_vec;
+use wl_realtime_ogd::helpers::join_vec;
 
 #[test]
 fn join_vec_should_return_empty_vec_for_empty_input() {

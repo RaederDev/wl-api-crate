@@ -1,7 +1,23 @@
 [package]
-name = "wiener-linien-ogd"
+name = "wl-realtime-ogd"
 version = "0.1.0"
 edition = "2021"
+authors = ["Benjamin Räder <crates@raeder.dev>"]
+license = "MIT OR Apache-2.0"
+readme = "README.MD"
+repository = "https://github.com/RaederDev/wl-realtime-ogd"
+description = """
+Provides a convenient interface for interacting with the Wiener Linien Real-Time Open Government Data (OGD) API.
+"""
+keywords = ["ogd", "vienna", "public-transport"]
+include = [
+    "/Cargo.toml",
+    "/LICENSE-APACHE",
+    "/LICENSE-MIT",
+    "/README.md",
+    "/src/**",
+    "/tests/**",
+]
 
 [dependencies]
 chrono = "0.4.24"

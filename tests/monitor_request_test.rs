@@ -1,6 +1,6 @@
 use std::{fs::File, io::Read};
 
-use wiener_linien_ogd::models::{
+use wl_realtime_ogd::models::{
     BuildRequestUrl, ExtTrafficInfoEnum, MonitorRequest, MonitorResponse, TrafficInfoEnum,
 };
 
